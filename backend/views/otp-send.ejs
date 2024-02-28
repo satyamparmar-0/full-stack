@@ -1,0 +1,49 @@
+<!-- views/sendOTP.ejs -->
+
+<%- include('layout', { title: 'Send OTP' }) %>
+
+<style>
+    /* Additional styles for the send OTP page */
+    form {
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f8f8;
+        border-radius: 8px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+    }
+</style>
+
+<section>
+    <h2>Send OTP</h2>
+    <form action="/send-otp" method="POST">
+        <label for="mobileNumber">Mobile Number:</label>
+        <input type="text" id="mobileNumber" name="mobileNumber" required>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <button type="submit">Send OTP</button>
+    </form>
+</section>

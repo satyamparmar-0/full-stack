@@ -1,0 +1,57 @@
+<!-- views/billing.ejs -->
+
+<%- include('layout', { title: 'Billing' }) %>
+
+<style>
+  /* Add your custom styles here */
+  .item-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .quantity {
+    width: 30px;
+    text-align: center;
+  }
+</style>
+
+<div class="container">
+  <h2>Restaurant Billing</h2>
+
+  <form action="/calculate" method="post">
+    <% items.forEach(item => { %>
+      <div class="item-container">
+        <span><%= item.name %></span>
+        <span>$<%= item.price.toFixed(2) %> each</span>
+        <div>
+          <button type="button" onclick="changeQuantity('<%= item.id %>', 'decrease')">-</button>
+          <span class="quantity" id="<%= item.id %>">0</span>
+          <button type="button" onclick="changeQuantity('<%= item.id %>', 'increase')">+</button>
+        </div>
+      </div>
+    <% }) %>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="totalAmount">Total Amount: $0.00</div>
+
+  <script>
+    function changeQuantity(itemId, action) {
+      const quantityElement = document.getElementById(itemId);
+      let currentQuantity = parseInt(quantityElement.innerText);
+
+      if (action === 'increase') {
+        currentQuantity++;
+      } else if (action === 'decrease' && currentQuantity > 0) {
+        currentQuantity--;
+      }
+
+      quantityElement.innerText = currentQuantity;
+      calculateTotal();
+    }
+
+    
+  </script>
+</div>
