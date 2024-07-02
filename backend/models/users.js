@@ -1,4 +1,4 @@
-    const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 const connectToDatabase = require('../connection');
 
 const Schema = mongoose.Schema;
