@@ -9,6 +9,7 @@ import AdminDashboard from './components/admin-dashboard';
 import UserDashboard from './components/user-dashboard';
 import MovingDot from './components/mouse';
 import ProductsTable from './products';
+import UpdateProductForm from './updateproducts';
 
 const App = () => {
   return (
@@ -23,7 +24,7 @@ const App = () => {
           <Route path="/user-dashboard" element={<UserDashboard  />} />
           <Route path="/MovingDot" element={<MovingDot />} />
           <Route path="/products" element={<ProductsTable/>}/>
-          {/* <Route path="/login" element={<LoginPage  />} /> */}
+          {<Route path="/updateproduct" element={< UpdateProductForm />} />}
         </Routes>
       </div>
     </Router>
