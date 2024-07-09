@@ -10,7 +10,7 @@ import UserDashboard from './components/user-dashboard';
 import MovingDot from './components/mouse';
 import ProductsTable from './products';
 import UpdateProductForm from './updateproducts';
-
+import Learning from './components/learning';
 const App = () => {
   return (
     <Router>
@@ -25,6 +25,7 @@ const App = () => {
           <Route path="/MovingDot" element={<MovingDot />} />
           <Route path="/products" element={<ProductsTable/>}/>
           {<Route path="/updateproduct" element={< UpdateProductForm />} />}
+          {<Route path="/learning" element={< Learning />} />}
         </Routes>
       </div>
     </Router>
@@ -61,6 +62,8 @@ const Home = () => {
         <p className="subHeading">
           Explore the amazing features of our app.
         </p>
+        <Learning username="John" designation="software engineer" userImage="https://images.pexels.com/photos/21852152/pexels-photo-21852152/free-photo-of-man-walking-with-chair-on-sea-shore-in-black-and-white.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"/>
+        <Learning username="Alex" designation="front end developer" userImage="https://images.pexels.com/photos/23331373/pexels-photo-23331373/free-photo-of-a-person-sitting-on-a-bench-in-a-black-and-white-photo.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"/>
       </div>
     </animated.div>
   );
